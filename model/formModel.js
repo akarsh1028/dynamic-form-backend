@@ -4,7 +4,6 @@ const formSchema = mongoose.Schema(
     {
         body: {
             type: Object,
-            required: true
         },
     },
     {
