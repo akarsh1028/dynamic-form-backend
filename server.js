@@ -15,14 +15,14 @@ app.get('/', (req, res) => {
     res.send('Hello Dynamic Form')
 })
 
-// app.get('/products', async(req, res) => {
-//     try {
-//         const products = await Product.find({});
-//         res.status(200).json(products);
-//     } catch (error) {
-//         res.status(500).json({message: error.message})
-//     }
-// })
+app.get('/form', async(req, res) => {
+    try {
+        const products = await DynamicFrom.find({});
+        res.status(200).json(products);
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+})
 
 app.get('/form/:id', async(req, res) =>{
     try {
