@@ -35,7 +35,7 @@ app.get('/form/:id', async(req, res) =>{
 })
 
 
-app.post('/form', async(req, res) => {
+app.post('/newform', async(req, res) => {
     try {
         const newform = await DynamicFrom.create(req.body)
         res.status(200).json(newform);
@@ -59,3 +59,9 @@ connect(url)
 }).catch((error) => {
     console.log(error)
 })
+
+var minutes = 14, the_interval = minutes * 60 * 1000;
+setInterval(async function() {
+  console.log("I am doing my 14 minutes check");
+  const products = await DynamicFrom.find({});
+}, the_interval);
