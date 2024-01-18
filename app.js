@@ -47,13 +47,13 @@ app.post('/newform', async(req, res) => {
 })
 
 var url = "mongodb+srv://akarshsharma001:akarsh1234@cluster0.qirzxgy.mongodb.net/?retryWrites=true&w=majority"
-
+const port = process.env.PORT || 8000
 mongoose.set("strictQuery", false)
 mongoose.
 connect(url)
 .then(() => {
     console.log('connected to MongoDB')
-    app.listen(8000, ()=> {
+    app.listen(port, ()=> {
         console.log(`Node API app is running on port 8000`)
     });
 }).catch((error) => {
