@@ -59,9 +59,3 @@ connect(url)
 }).catch((error) => {
     console.log(error)
 })
-
-var minutes = 14, the_interval = minutes * 60 * 1000;
-setInterval(async function() {
-  console.log("I am doing my 14 minutes check");
-  const products = await DynamicFrom.find({});
-}, the_interval);
